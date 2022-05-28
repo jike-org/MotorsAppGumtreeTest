@@ -12,6 +12,7 @@
 		869DF86F2842503A00809EC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 869DF86E2842503A00809EC1 /* Assets.xcassets */; };
 		869DF8722842503A00809EC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 869DF8712842503A00809EC1 /* Preview Assets.xcassets */; };
 		869DF879284250A800809EC1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF878284250A800809EC1 /* Constants.swift */; };
+		869DF8802842576100809EC1 /* Cars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF87F2842576100809EC1 /* Cars.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		869DF86E2842503A00809EC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		869DF8712842503A00809EC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		869DF878284250A800809EC1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		869DF87F2842576100809EC1 /* Cars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cars.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		869DF87B2842553400809EC1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				869DF87F2842576100809EC1 /* Cars.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			files = (
 				869DF86D2842503700809EC1 /* ContentView.swift in Sources */,
 				869DF86B2842503700809EC1 /* MotorsAppApp.swift in Sources */,
+				869DF8802842576100809EC1 /* Cars.swift in Sources */,
 				869DF879284250A800809EC1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
