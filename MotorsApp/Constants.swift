@@ -15,7 +15,9 @@ class Constants {
         static let apiKey = ""
         static let defaultScheme = "https" // responds on https also
         static let defaultHost = "mcuapi.mocklab.io"
-        static let defaultPath = "search?make=[make]&model=[model]&year=[year]"
+//        static let defaultPath = "search?make=[make]&model=[model]&year=[year]"
+        static let defaultPath = "/search"
+
     }
     
 }
