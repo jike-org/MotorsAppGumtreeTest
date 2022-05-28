@@ -18,6 +18,8 @@
 		869DF88628425A0100809EC1 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF88528425A0100809EC1 /* AboutView.swift */; };
 		869DF88928425BB700809EC1 /* MAAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF88828425BB700809EC1 /* MAAppearance.swift */; };
 		869DF88B284270F700809EC1 /* CarsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF88A284270F700809EC1 /* CarsViewModel.swift */; };
+		869DF88D2842AEDB00809EC1 /* UIFont+MA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF88C2842AEDB00809EC1 /* UIFont+MA.swift */; };
+		869DF88F2842AF4800809EC1 /* UIColor+MA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF88E2842AF4800809EC1 /* UIColor+MA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		869DF88528425A0100809EC1 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		869DF88828425BB700809EC1 /* MAAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAAppearance.swift; sourceTree = "<group>"; };
 		869DF88A284270F700809EC1 /* CarsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewModel.swift; sourceTree = "<group>"; };
+		869DF88C2842AEDB00809EC1 /* UIFont+MA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+MA.swift"; sourceTree = "<group>"; };
+		869DF88E2842AF4800809EC1 /* UIColor+MA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+MA.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				869DF88828425BB700809EC1 /* MAAppearance.swift */,
+				869DF88C2842AEDB00809EC1 /* UIFont+MA.swift */,
+				869DF88E2842AF4800809EC1 /* UIColor+MA.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -207,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				869DF882284257FB00809EC1 /* CarsDataService.swift in Sources */,
+				869DF88F2842AF4800809EC1 /* UIColor+MA.swift in Sources */,
 				869DF88628425A0100809EC1 /* AboutView.swift in Sources */,
 				869DF86D2842503700809EC1 /* ContentView.swift in Sources */,
 				869DF88B284270F700809EC1 /* CarsViewModel.swift in Sources */,
@@ -214,6 +221,7 @@
 				869DF86B2842503700809EC1 /* MotorsAppApp.swift in Sources */,
 				869DF8802842576100809EC1 /* Cars.swift in Sources */,
 				869DF884284259F500809EC1 /* SearchView.swift in Sources */,
+				869DF88D2842AEDB00809EC1 /* UIFont+MA.swift in Sources */,
 				869DF879284250A800809EC1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

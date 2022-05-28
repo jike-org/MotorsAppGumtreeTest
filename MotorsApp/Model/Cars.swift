@@ -8,12 +8,12 @@
 import Foundation
 
 // MARK: - Cars
-struct Cars: Codable {
+struct Cars: Codable, Hashable {
     let searchResults: [SearchResult]
 }
 
 // MARK: - SearchResult
-struct SearchResult: Codable {
+struct SearchResult: Codable, Hashable {
     let id, name, title, make: String
     let model, year, price: String
 }

@@ -10,24 +10,60 @@ import SwiftUI
 struct SearchView: View {
     
     @StateObject private var carsListVM = CarsViewModel()
-//    @State private var searchText: String = ""
     
     var body: some View {
         NavigationView {
-            List {
-//                Text("""
-//            **MotorsApp**\n
-//            *Stephen M. Clark*\n
-//            Visit My Website: [ here](https://www.steveclarkapps.com)
-//            """).multilineTextAlignment(.center)
+            VStack {
                 
-            }.navigationBarTitle(Text("Search"))
-            .listStyle(.plain)
-            .searchable(text: $carsListVM.searchText)
+                HStack{
+                    Text("Make:")
+                    Spacer()
+                    TextField("Enter make",
+                              text: $carsListVM.make).textFieldStyle(.roundedBorder).frame(width: 200, height: 40, alignment: .trailing)
+                }.padding(.leading, 15).padding(.trailing, 15)
+                
+                HStack{
+                    Text("Model:")
+                    Spacer()
+                    TextField("Enter model",
+                              text: $carsListVM.model).textFieldStyle(.roundedBorder).frame(width: 200, height: 40, alignment: .trailing)
+                }.padding(.leading, 15).padding(.trailing, 15)
+                
+                HStack{
+                    Text("Year:")
+                    Spacer()
+                    TextField("Enter year",
+                              text: $carsListVM.year).textFieldStyle(.roundedBorder).frame(width: 200, height: 40, alignment: .trailing)
+                }.padding(.leading, 15).padding(.trailing, 15)
+                
+                Button {
+                    // do search
+                    self.carsListVM.searchForCars()
+                } label: {
+                    ZStack {
+                        Color(UIColor.Theme.mainColor)
+                        Text("Search").foregroundColor(.white)
+                    }.frame(width: 200, height: 40, alignment: .center)
+                        .cornerRadius(10)
+                }
 
-//            .onChange(of: carsListVM.searchText, perform: { newValue in
-//                    print(newValue)
-//                })
+                List(self.carsListVM.cars.searchResults, id: \.self) { car in
+                    VStack {
+                        HStack {
+                            Text(car.name)
+                            Text(car.title)
+                        }
+                        HStack {
+                            Text(car.make)
+                            Text(car.model)
+                        }
+                        HStack {
+                            Text(car.year)
+                            Text(car.price)
+                        }
+                    }
+                }.navigationBarTitle(Text("Car Search"))
+            }
         }.navigationViewStyle(.stack)
     }
 }
