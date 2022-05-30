@@ -10,10 +10,15 @@ import SwiftUI
 struct ContentView: View {
     
     init() {
+        // Setup some of the appearance elements of the app using an
+        // apperance proxy
         MAAppearance.setUpApperance()
     }
 
     var body: some View {
+        
+        // I've used a tab view structure to organise the sections of the
+        // app for the user
         TabView {
             SearchView()
                 .tabItem {

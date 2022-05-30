@@ -15,6 +15,6 @@ struct ButtonModifier: ViewModifier {
             .frame(minWidth: 0, maxWidth: .infinity)
             .background(Color(UIColor.Theme.mainColor.cgColor))
             .foregroundColor(Color.white)
-            .cornerRadius(2)
+            .cornerRadius(5)
     }
 }
