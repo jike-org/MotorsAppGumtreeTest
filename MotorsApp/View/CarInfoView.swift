@@ -38,18 +38,18 @@ struct CarInfoView: View {
                 }
             }.fixedSize(horizontal: false, vertical: true)
             HStack {
-                Text(car.name).font(.headline)
+                Text(car.name).modifier(InLineTitleModifier())
                 Spacer()
-                Text(car.price).bold()
+                Text(car.price).modifier(InLineTitleModifier())
             }
             
             HStack {
-                Text(car.year)
+                Text(car.year).modifier(BodyTextModifier())
                 Spacer()
             }.padding(.top, 1).padding(.bottom, 1)
             
             HStack {
-                Text(car.title)
+                Text(car.title).modifier(BodyTextModifier())
                 Spacer()
                 
             }.padding(.top, 1).padding(.bottom, 1)

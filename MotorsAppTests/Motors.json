@@ -1,0 +1,40 @@
+{
+  "searchResults": [
+    {
+      "id": "221843",
+      "name": "Audi A1",
+      "title": "1.4L Sport TFSI, 14,870 miles, Manual Petrol Car.",
+      "make": "Audi",
+      "model": "A1",
+      "year": "2017",
+      "price": "£12650.00"
+    },
+    {
+      "id": "397286",
+      "name": "BMW 3 Series",
+      "title": "2L Sport 330e, 32,462 miles, Automatic, Plug-in hybrid Car.",
+      "make": "BMW",
+      "model": "3 Series",
+      "year": "2016",
+      "price": "£17150.00"
+    },
+    {
+      "id": "390251",
+      "name": "Nissan Juke",
+      "title": "1.2L Acenta DIG-T, 32,644 miles, Manual Petrol Car.",
+      "make": "Nissan",
+      "model": "Juke",
+      "year": "2016",
+      "price": "£8900.00"
+    },
+    {
+      "id": "012565",
+      "name": "Sazuki Jimny",
+      "title": "1.3L SZ3 VVT, 9,603 miles, Manual Petrol Car.",
+      "make": "Sazuki",
+      "model": "Jimny",
+      "year": "2016",
+      "price": "£13650.00"
+    }
+  ]
+}

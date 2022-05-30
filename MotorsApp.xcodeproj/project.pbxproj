@@ -30,6 +30,12 @@
 		869DF8AE28439E7500809EC1 /* AppInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF8AD28439E7500809EC1 /* AppInfoView.swift */; };
 		869DF8B028439EA200809EC1 /* CarInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF8AF28439EA200809EC1 /* CarInfoView.swift */; };
 		869DF8B2284405C700809EC1 /* TextFieldClearModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF8B1284405C700809EC1 /* TextFieldClearModifier.swift */; };
+		869DF8B72844E59400809EC1 /* CoverfaceSELight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 869DF8B42844E59200809EC1 /* CoverfaceSELight.ttf */; };
+		869DF8B82844E59400809EC1 /* CoverfaceSE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 869DF8B52844E59300809EC1 /* CoverfaceSE.ttf */; };
+		869DF8B92844E59400809EC1 /* CoverfaceSEBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 869DF8B62844E59300809EC1 /* CoverfaceSEBold.ttf */; };
+		869DF8BC2844EAFF00809EC1 /* BodyTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF8BB2844EAFE00809EC1 /* BodyTextModifier.swift */; };
+		869DF8BE2845026300809EC1 /* Motors.json in Resources */ = {isa = PBXBuildFile; fileRef = 869DF8BD2845026200809EC1 /* Motors.json */; };
+		869DF8C0284510A500809EC1 /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF8BF284510A500809EC1 /* MockDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +74,13 @@
 		869DF8AD28439E7500809EC1 /* AppInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoView.swift; sourceTree = "<group>"; };
 		869DF8AF28439EA200809EC1 /* CarInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoView.swift; sourceTree = "<group>"; };
 		869DF8B1284405C700809EC1 /* TextFieldClearModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearModifier.swift; sourceTree = "<group>"; };
+		869DF8B42844E59200809EC1 /* CoverfaceSELight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CoverfaceSELight.ttf; sourceTree = "<group>"; };
+		869DF8B52844E59300809EC1 /* CoverfaceSE.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CoverfaceSE.ttf; sourceTree = "<group>"; };
+		869DF8B62844E59300809EC1 /* CoverfaceSEBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CoverfaceSEBold.ttf; sourceTree = "<group>"; };
+		869DF8BA2844E5B900809EC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		869DF8BB2844EAFE00809EC1 /* BodyTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTextModifier.swift; sourceTree = "<group>"; };
+		869DF8BD2845026200809EC1 /* Motors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Motors.json; sourceTree = "<group>"; };
+		869DF8BF284510A500809EC1 /* MockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +122,7 @@
 		869DF8692842503700809EC1 /* MotorsApp */ = {
 			isa = PBXGroup;
 			children = (
+				869DF8BA2844E5B900809EC1 /* Info.plist */,
 				869DF86A2842503700809EC1 /* MotorsAppApp.swift */,
 				869DF878284250A800809EC1 /* Constants.swift */,
 				869DF88728425BA400809EC1 /* Theme */,
@@ -181,6 +195,7 @@
 		869DF88728425BA400809EC1 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				869DF8B32844E57F00809EC1 /* Fonts */,
 				869DF88828425BB700809EC1 /* MAAppearance.swift */,
 				869DF88C2842AEDB00809EC1 /* UIFont+MA.swift */,
 				869DF88E2842AF4800809EC1 /* UIColor+MA.swift */,
@@ -191,7 +206,9 @@
 		869DF8972843943C00809EC1 /* MotorsAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				869DF8BD2845026200809EC1 /* Motors.json */,
 				869DF8982843943C00809EC1 /* MotorsAppTests.swift */,
+				869DF8BF284510A500809EC1 /* MockDataService.swift */,
 			);
 			path = MotorsAppTests;
 			sourceTree = "<group>";
@@ -203,6 +220,7 @@
 				869DF8A42843980500809EC1 /* SymbolModifier.swift */,
 				869DF8A22843980500809EC1 /* TitleModifier.swift */,
 				869DF8B1284405C700809EC1 /* TextFieldClearModifier.swift */,
+				869DF8BB2844EAFE00809EC1 /* BodyTextModifier.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -213,6 +231,16 @@
 				869DF8A92843995200809EC1 /* HeaderComponent.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		869DF8B32844E57F00809EC1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				869DF8B52844E59300809EC1 /* CoverfaceSE.ttf */,
+				869DF8B62844E59300809EC1 /* CoverfaceSEBold.ttf */,
+				869DF8B42844E59200809EC1 /* CoverfaceSELight.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +324,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869DF8B92844E59400809EC1 /* CoverfaceSEBold.ttf in Resources */,
+				869DF8B72844E59400809EC1 /* CoverfaceSELight.ttf in Resources */,
+				869DF8B82844E59400809EC1 /* CoverfaceSE.ttf in Resources */,
 				869DF8722842503A00809EC1 /* Preview Assets.xcassets in Resources */,
 				869DF86F2842503A00809EC1 /* Assets.xcassets in Resources */,
 			);
@@ -305,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869DF8BE2845026300809EC1 /* Motors.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +351,7 @@
 				869DF8912842B50800809EC1 /* ResultsView.swift in Sources */,
 				869DF88F2842AF4800809EC1 /* UIColor+MA.swift in Sources */,
 				869DF8A72843980500809EC1 /* SymbolModifier.swift in Sources */,
+				869DF8BC2844EAFF00809EC1 /* BodyTextModifier.swift in Sources */,
 				869DF8AA2843995200809EC1 /* HeaderComponent.swift in Sources */,
 				869DF86D2842503700809EC1 /* ContentView.swift in Sources */,
 				869DF8A0284397AD00809EC1 /* AboutView.swift in Sources */,
@@ -343,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				869DF8992843943C00809EC1 /* MotorsAppTests.swift in Sources */,
+				869DF8C0284510A500809EC1 /* MockDataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +516,7 @@
 				DEVELOPMENT_TEAM = 4SQG5NJNPF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MotorsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -511,6 +546,7 @@
 				DEVELOPMENT_TEAM = 4SQG5NJNPF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MotorsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

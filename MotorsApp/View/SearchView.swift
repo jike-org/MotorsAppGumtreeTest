@@ -25,7 +25,7 @@ struct SearchView: View {
                 Spacer()
                 HStack{
                     
-                    Text("Make:").bold()
+                    Text("Make:").modifier(InLineTitleModifier())
                     Spacer()
                     Menu {
                         
@@ -49,25 +49,25 @@ struct SearchView: View {
                         }
                         
                     } label: {
-                        Text("Select").font(.system(size: 15))
+                        Text("Select").modifier(BodyTextLinkModifier())
                     }.frame(width: 60, height: 40, alignment: .leading)
                     TextField("...or type here",
                               text: $carsListVM.make).textFieldStyle(.roundedBorder).frame(width: 200, height: 40, alignment: .trailing)
-                        .modifier(TextFieldClearButton(text: $carsListVM.make))
+                        .modifier(CustomTextFieldModifier(text: $carsListVM.make))
                         .disableAutocorrection(true)
                 }.padding(.leading, 15).padding(.trailing, 15)
                 
                 HStack{
-                    Text("Model:").bold()
+                    Text("Model:").modifier(InLineTitleModifier())
                     Spacer()
                     TextField("enter model",
                               text: $carsListVM.model).textFieldStyle(.roundedBorder).frame(width: 200, height: 40, alignment: .trailing)
-                        .modifier(TextFieldClearButton(text: $carsListVM.model))
+                        .modifier(CustomTextFieldModifier(text: $carsListVM.model))
                         .disableAutocorrection(true)
                 }.padding(.leading, 15).padding(.trailing, 15)
                 
                 HStack {
-                    Text("Year (tap to change):").bold()
+                    Text("Year (tap to change):").modifier(InLineTitleModifier())
                     
                     Picker(selection: $carsListVM.year) {
                         ForEach(1950...2022, id: \.self) { value in
@@ -88,7 +88,7 @@ struct SearchView: View {
                 Button(action: {
                     self.carsListVM.searchForCars()
                 }) {
-                  Text("Search".uppercased())
+                  Text("Search")//.uppercased())
                     .modifier(ButtonModifier())
                 }
                 .frame(width: 200, height: 40, alignment: .center)

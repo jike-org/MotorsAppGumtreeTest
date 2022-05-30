@@ -15,9 +15,9 @@ struct RowAppInfoView: View {
   var body: some View {
     VStack {
       HStack {
-        Text(ItemOne).foregroundColor(Color.gray)
+        Text(ItemOne).font(Font(UIFont.Body.size1)).foregroundColor(Color.gray)
         Spacer()
-        Text(ItemTwo)
+        Text(ItemTwo).font(Font(UIFont.Body.size1))
       }
       Divider()
     }

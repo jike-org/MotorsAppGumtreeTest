@@ -6,6 +6,9 @@
 //
 
 import XCTest
+import Combine
+
+@testable import MotorsApp
 
 class MotorsAppTests: XCTestCase {
 
@@ -17,19 +20,83 @@ class MotorsAppTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    // MARK: - Decode JSON - Codable Data
+    
+    func test_DecodingRootCodableObject_FromJson() throws {
+
+        // GIVEN
+        guard let jsonData = readLocalFile(forName: "Motors") else { XCTFail("Can't read local json file"); return }
+        // WHEN
+        let carsData = try? JSONDecoder().decode(Cars.self, from: jsonData)
+        // THEN
+        XCTAssertTrue(carsData?.searchResults.count == 4)
+        XCTAssertTrue(carsData?.searchResults[0].name == "Audi A1")
+        XCTAssertTrue(carsData?.searchResults[2].price == "£8900.00")
+    }
+    
+    // MARK: - Network
+    
+    func test_dataService_canFetchDataFromAPI() throws {
+        
+        let expectation = XCTestExpectation(description: "Get cars data from api call")
+        var observer: AnyCancellable?
+        let carsDataService: CarsFetchingService = CarsDataService()
+        
+        observer = carsDataService.fetchCars(make: "Audi", model: "A1", year: "2016").sink(receiveCompletion: { completion in
+            switch completion {
+            case .finished:
+                print("Success")
+                expectation.fulfill()
+            case .failure(let error):
+                print(error)
+            }
+        }, receiveValue: { carsContainer in
+
+        })
+        // Wait upto 5 seconds for the network call to complete sucessfully
+        wait(for: [expectation], timeout: 5)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+    
+    func test_mockDataService_canFetchData() throws {
+        
+        let expectation = XCTestExpectation(description: "Get cars data from mock api call")
+        var observer: AnyCancellable?
+        let carsMockDataService: CarsFetchingService = MockDataService()
+        
+        // Switch to alternate queue in order to allow thread to be paused to simulate network API response delay
+        DispatchQueue.global(qos: .background).async {
+            observer = carsMockDataService.fetchCars(make: "Audi", model: "A1", year: "2016").sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    print("Success")
+                    expectation.fulfill()
+                case .failure(let error):
+                    print(error)
+                }
+            }, receiveValue: { carsContainer in
+                
+            })
         }
+        
+        // Wait upto 5 seconds for the network call to complete sucessfully
+        wait(for: [expectation], timeout: 5)
     }
-
+    
+    
+    // MARK: - Helper Functions
+    
+    private func readLocalFile(forName name: String) -> Data? {
+        do { // Bundle(for: type(of: self))
+            if let bundlePath = Bundle(for: type(of: self )).path(forResource: name, ofType: "json"),
+               let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
+                return jsonData
+            }
+        } catch {
+            print(error)
+        }
+        
+        return nil
+    }
 }

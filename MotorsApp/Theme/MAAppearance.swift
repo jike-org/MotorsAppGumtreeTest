@@ -17,7 +17,7 @@ class MAAppearance {
     /// This method will trigger all the appearance methods
     static func setUpApperance() {
         setupTableView()
-//        setupTabBarApperance()
+        setupTabBarApperance()
         setupNavigationBar()
     }
     
@@ -31,46 +31,29 @@ class MAAppearance {
     //
     
     static func setupTabBarApperance() {
-        let appearance = UITabBar.appearance()
-        
+
         let selectedIconColor = UIColor.white
-        appearance.isOpaque = true
-//        appearance.tintColor = UIColor.white
-//        appearance.barTintColor = UIColor.white
-//        appearance.backgroundColor = UIColor.Theme.mainColor
-//
-        
+
         if #available(iOS 15, *) {
-             let appearance = UITabBarAppearance()
-             appearance.configureWithDefaultBackground()
-             appearance.backgroundColor = UIColor.Theme.mainColor
-             appearance.stackedLayoutAppearance.normal.iconColor = .darkGray
-             appearance.stackedLayoutAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGray]
-             
-             appearance.stackedLayoutAppearance.selected.iconColor = selectedIconColor
-             appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: selectedIconColor]
-             // appearance.backgroundColor = .systemBackground
+
+            let appearance = UITabBarAppearance()
+            appearance.configureWithDefaultBackground()
+            appearance.backgroundColor = UIColor.Theme.mainColor
+
+            appearance.stackedLayoutAppearance.normal.iconColor = .darkGray
+            appearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.darkGray,
+                                                                             .font: UIFont.Light.size0]
+
+            appearance.stackedLayoutAppearance.selected.iconColor = selectedIconColor
+            appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: selectedIconColor,
+                                                                               .font: UIFont.Body.size0]
+
             let appearanceTab = UITabBar.appearance()
 
             appearanceTab.standardAppearance = appearance
             appearanceTab.scrollEdgeAppearance = appearance
-         }
-         
-         if #available(iOS 13, *) {
-             let appearance = UITabBarAppearance()
-             appearance.shadowImage = UIImage()
-             appearance.shadowColor = .white
-             
-             appearance.stackedLayoutAppearance.normal.iconColor = .darkGray
-             appearance.stackedLayoutAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGray]
- //            appearance.stackedLayoutAppearance.normal.badgeBackgroundColor = .yellow
-             
-             appearance.stackedLayoutAppearance.selected.iconColor = selectedIconColor
-             appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: selectedIconColor]
-             let appearanceTab = UITabBar.appearance()
-
-             appearanceTab.standardAppearance = appearance
-         }
+        }
+        
     }
     
     static func setupNavigationBar() {
@@ -80,7 +63,7 @@ class MAAppearance {
 
         let attrs: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
-            .font: UIFont.systemFont(ofSize: 25, weight: .black)
+            .font: UIFont.Bold.size4
         ]
 
         appearance.largeTitleTextAttributes = attrs

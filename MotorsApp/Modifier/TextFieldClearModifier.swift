@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct TextFieldClearButton: ViewModifier {
+struct CustomTextFieldModifier: ViewModifier {
     @Binding var text: String
     
     func body(content: Content) -> some View {
         ZStack {
             content
+                .font(Font(UIFont.Body.size1))
             HStack {
                 if !text.isEmpty {
                     
