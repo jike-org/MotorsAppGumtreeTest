@@ -80,7 +80,7 @@ class MAAppearance {
 
         let attrs: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
-            .font: UIFont.monospacedSystemFont(ofSize: 25, weight: .black)
+            .font: UIFont.systemFont(ofSize: 25, weight: .black)
         ]
 
         appearance.largeTitleTextAttributes = attrs

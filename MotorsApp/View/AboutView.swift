@@ -1,29 +1,44 @@
 //
-//  AboutView.swift
+//  InfoView.swift
 //  MotorsApp
 //
-//  Created by Stephen Clark on 28/05/2022.
+//  Created by Stephen Clark on 29/05/2022.
 //
 
 import SwiftUI
+import Foundation
+
 
 struct AboutView: View {
-    var body: some View {
-        NavigationView {
-            VStack {
-                Text("""
-                **MotorsApp**\n
-                *Stephen M. Clark*\n
-                Visit My Website: [ here](https://www.steveclarkapps.com)
-                """).multilineTextAlignment(.center)
-                
-            }.navigationBarTitle(Text("About"))
-        }.navigationViewStyle(.stack)
-    }
+  // MARK: - PROPERTIES
+  @Environment(\.presentationMode) var presentationMode
+  
+  var body: some View {
+      
+      NavigationView {
+          ScrollView(.vertical, showsIndicators: false) {
+              VStack(alignment: .center, spacing: 20) {
+                  HeaderComponent()
+                  
+                 // Spacer(minLength: 10)
+                  
+                  AppInfoView()
+                  
+                  //Spacer(minLength: 10)
+                  
+              }
+              .frame(minWidth: 0, maxWidth: .infinity)
+              .padding(.top, 15)
+              .padding(.bottom, 25)
+              .padding(.horizontal, 25)
+          }.navigationBarTitle(Text("Info"))
+          
+      }.navigationViewStyle(.stack)
+  }
 }
 
-struct AboutView_Previews: PreviewProvider {
-    static var previews: some View {
-        AboutView()
-    }
+struct InfoView_Previews: PreviewProvider {
+  static var previews: some View {
+    AboutView()
+  }
 }

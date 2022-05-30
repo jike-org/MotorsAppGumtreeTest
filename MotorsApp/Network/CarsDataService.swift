@@ -32,9 +32,10 @@ final class CarsDataService: CarsFetchingService {
         self.year = year
         
         return URLSession.shared.dataTaskPublisher(for: components.url!)
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .receive(on: DispatchQueue.main)
             .map { $0.data }
             .decode(type: Cars.self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
 }
