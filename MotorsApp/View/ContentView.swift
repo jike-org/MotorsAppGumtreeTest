@@ -10,8 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     init() {
-        // Setup some of the appearance elements of the app using an
-        // apperance proxy
+        // Setup appearance elements in the app using an apperance proxy
         MAAppearance.setUpApperance()
     }
 

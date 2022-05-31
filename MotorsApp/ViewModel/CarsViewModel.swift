@@ -22,7 +22,11 @@ class CarsViewModel: ObservableObject {
     @Published var year: Int = 2019
     
     @Published var requestSucceded: Bool = false
+    
+    // Alert parameters
     @Published var showAlert: Bool = false
+//    @Published var alertText: String = ""
+//    @Published var alertDecription: String = ""
 
     public func searchForCars() {
         

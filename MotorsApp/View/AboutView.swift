@@ -19,12 +19,8 @@ struct AboutView: View {
           ScrollView(.vertical, showsIndicators: false) {
               VStack(alignment: .center, spacing: 20) {
                   HeaderComponent()
-                  
-                 // Spacer(minLength: 10)
-                  
+                  Spacer(minLength: 10)
                   AppInfoView()
-                  
-                  //Spacer(minLength: 10)
                   
               }
               .frame(minWidth: 0, maxWidth: .infinity)

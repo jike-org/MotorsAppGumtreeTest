@@ -12,14 +12,6 @@ import Combine
 
 class MotorsAppTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     
     // MARK: - Decode JSON - Codable Data
     
@@ -92,8 +84,7 @@ class MotorsAppTests: XCTestCase {
     
     
     // MARK: - Helper Functions
-    
-    
+
     /// Helper function lets us easily read json from a local file
     /// - Parameter name: name of the json file
     /// - Returns: data from the json as Data

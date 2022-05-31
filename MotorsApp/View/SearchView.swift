@@ -114,8 +114,8 @@ struct SearchView: View {
                             //self.carsListVM.searchForCars()
                         } else {
                             // Alert title "Please fill in all fields"
-                            alertText = "Unknown errror getting cars!"
-                            alertDescription = "\nPlease try again later or contact support."
+                            alertText = "Fill in all Fields!"
+                            alertDescription = "\nPlease fill in all fields in the form."
                             carsListVM.showAlert.toggle()
                         }
                     }) {
@@ -133,6 +133,13 @@ struct SearchView: View {
                             showLoadingIndicator.toggle()
                         }
                     }
+//                    .onChange(of: carsListVM.requestSucceded) { newValue in
+//                        if (newValue == false) {
+//                            alertText = "Network Error!"
+//                            alertDescription = "\nError fetching cars, please try again later or contact support if issue persists."
+//                            carsListVM.showAlert.toggle()
+//                        }
+//                    }
                     
                     // Using the technique of isActive on a navigation link
                     // for our segues (on device this is smooth)
