@@ -11,9 +11,9 @@ import SwifterSwift
 
 final class CarsDataService: CarsFetchingService {
     
-    var make: String = ""
-    var model: String = ""
-    var year: String = ""
+    private var make: String = ""
+    private var model: String = ""
+    private var year: String = ""
     
     var components: URLComponents {
         var components = URLComponents()

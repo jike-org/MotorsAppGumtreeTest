@@ -15,7 +15,7 @@ struct ResultsView: View {
     var body: some View {
         List(self.cars.searchResults, id: \.self) { car in
         CarInfoView(car: car, carImageString: array.randomElement()!)
-        }.navigationBarTitle(Text("Car Search"))
+        }.navigationBarTitle(Text("Results"))
     }
 }
 
