@@ -39,14 +39,20 @@ class MotorsAppTests: XCTestCase {
     
     func test_dataService_canFetchDataFromAPI() throws {
         
+        // GIVEN
         let expectation = XCTestExpectation(description: "Get cars data from api call")
         var observer: AnyCancellable?
         let carsDataService: CarsFetchingService = CarsDataService()
         
-        observer = carsDataService.fetchCars(make: "Audi", model: "A1", year: "2016").sink(receiveCompletion: { completion in
+        let make = "Audi"
+        let model = "A1"
+        let year = "2016"
+        
+        // WHEN
+        observer = carsDataService.fetchCars(make: make, model: model, year: year).sink(receiveCompletion: { completion in
             switch completion {
             case .finished:
-                print("Success")
+                // THEN (the expectation is)
                 expectation.fulfill()
             case .failure(let error):
                 print(error)
@@ -87,6 +93,10 @@ class MotorsAppTests: XCTestCase {
     
     // MARK: - Helper Functions
     
+    
+    /// Helper function lets us easily read json from a local file
+    /// - Parameter name: name of the json file
+    /// - Returns: data from the json as Data
     private func readLocalFile(forName name: String) -> Data? {
         do { // Bundle(for: type(of: self))
             if let bundlePath = Bundle(for: type(of: self )).path(forResource: name, ofType: "json"),

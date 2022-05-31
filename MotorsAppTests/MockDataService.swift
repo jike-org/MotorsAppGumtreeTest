@@ -25,13 +25,12 @@ final class MockDataService: CarsFetchingService {
     }
     
     
-    func createResults(searchResults: [SearchResult]) -> AnyPublisher<Cars, Error>  {
+    private func createResults(searchResults: [SearchResult]) -> AnyPublisher<Cars, Error>  {
         
         let cars = Cars(searchResults: searchResults)
         
         return Just((cars))
             .setFailureType(to: Error.self)
             .eraseToAnyPublisher()
-        
     }
 }
