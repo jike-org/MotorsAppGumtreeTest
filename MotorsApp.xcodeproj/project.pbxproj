@@ -37,6 +37,11 @@
 		869DF8BE2845026300809EC1 /* Motors.json in Resources */ = {isa = PBXBuildFile; fileRef = 869DF8BD2845026200809EC1 /* Motors.json */; };
 		869DF8C0284510A500809EC1 /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF8BF284510A500809EC1 /* MockDataService.swift */; };
 		869DF8C32845233200809EC1 /* ActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 869DF8C22845233200809EC1 /* ActivityIndicatorView */; };
+		869DF8C928466FAE00809EC1 /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 869DF8C828466FAE00809EC1 /* SwifterSwift */; };
+		869DF8CB28469CAC00809EC1 /* String+MA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF8CA28469CAC00809EC1 /* String+MA.swift */; };
+		869DF8CD28469F2000809EC1 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF8CC28469F2000809EC1 /* StringExtensionTests.swift */; };
+		869DF8CF2846A25B00809EC1 /* FontExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF8CE2846A25A00809EC1 /* FontExtensionTests.swift */; };
+		869DF8D12846A26C00809EC1 /* ColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF8D02846A26C00809EC1 /* ColorExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +87,10 @@
 		869DF8BB2844EAFE00809EC1 /* BodyTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTextModifier.swift; sourceTree = "<group>"; };
 		869DF8BD2845026200809EC1 /* Motors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Motors.json; sourceTree = "<group>"; };
 		869DF8BF284510A500809EC1 /* MockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService.swift; sourceTree = "<group>"; };
+		869DF8CA28469CAC00809EC1 /* String+MA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MA.swift"; sourceTree = "<group>"; };
+		869DF8CC28469F2000809EC1 /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
+		869DF8CE2846A25A00809EC1 /* FontExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensionTests.swift; sourceTree = "<group>"; };
+		869DF8D02846A26C00809EC1 /* ColorExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +99,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				869DF8C32845233200809EC1 /* ActivityIndicatorView in Frameworks */,
+				869DF8C928466FAE00809EC1 /* SwifterSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +200,7 @@
 		869DF87E2842559300809EC1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				869DF8CA28469CAC00809EC1 /* String+MA.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -209,8 +220,11 @@
 			isa = PBXGroup;
 			children = (
 				869DF8BD2845026200809EC1 /* Motors.json */,
-				869DF8982843943C00809EC1 /* MotorsAppTests.swift */,
 				869DF8BF284510A500809EC1 /* MockDataService.swift */,
+				869DF8982843943C00809EC1 /* MotorsAppTests.swift */,
+				869DF8CC28469F2000809EC1 /* StringExtensionTests.swift */,
+				869DF8CE2846A25A00809EC1 /* FontExtensionTests.swift */,
+				869DF8D02846A26C00809EC1 /* ColorExtensionTests.swift */,
 			);
 			path = MotorsAppTests;
 			sourceTree = "<group>";
@@ -263,6 +277,7 @@
 			name = MotorsApp;
 			packageProductDependencies = (
 				869DF8C22845233200809EC1 /* ActivityIndicatorView */,
+				869DF8C828466FAE00809EC1 /* SwifterSwift */,
 			);
 			productName = MotorsApp;
 			productReference = 869DF8672842503700809EC1 /* MotorsApp.app */;
@@ -316,6 +331,7 @@
 			mainGroup = 869DF85E2842503700809EC1;
 			packageReferences = (
 				869DF8C12845233100809EC1 /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */,
+				869DF8C728466FAE00809EC1 /* XCRemoteSwiftPackageReference "SwifterSwift" */,
 			);
 			productRefGroup = 869DF8682842503700809EC1 /* Products */;
 			projectDirPath = "";
@@ -357,6 +373,7 @@
 			files = (
 				869DF882284257FB00809EC1 /* CarsDataService.swift in Sources */,
 				869DF8912842B50800809EC1 /* ResultsView.swift in Sources */,
+				869DF8CB28469CAC00809EC1 /* String+MA.swift in Sources */,
 				869DF88F2842AF4800809EC1 /* UIColor+MA.swift in Sources */,
 				869DF8A72843980500809EC1 /* SymbolModifier.swift in Sources */,
 				869DF8BC2844EAFF00809EC1 /* BodyTextModifier.swift in Sources */,
@@ -383,8 +400,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869DF8D12846A26C00809EC1 /* ColorExtensionTests.swift in Sources */,
 				869DF8992843943C00809EC1 /* MotorsAppTests.swift in Sources */,
 				869DF8C0284510A500809EC1 /* MockDataService.swift in Sources */,
+				869DF8CF2846A25B00809EC1 /* FontExtensionTests.swift in Sources */,
+				869DF8CD28469F2000809EC1 /* StringExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +672,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		869DF8C728466FAE00809EC1 /* XCRemoteSwiftPackageReference "SwifterSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwifterSwift/SwifterSwift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -659,6 +687,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 869DF8C12845233100809EC1 /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */;
 			productName = ActivityIndicatorView;
+		};
+		869DF8C828466FAE00809EC1 /* SwifterSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 869DF8C728466FAE00809EC1 /* XCRemoteSwiftPackageReference "SwifterSwift" */;
+			productName = SwifterSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

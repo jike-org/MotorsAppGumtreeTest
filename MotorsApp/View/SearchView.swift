@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwifterSwift
 import ActivityIndicatorView
 
 struct SearchView: View {
@@ -70,6 +71,7 @@ struct SearchView: View {
                                   text: $carsListVM.model).textFieldStyle(.roundedBorder).frame(width: 200, height: 40, alignment: .trailing)
                             .modifier(CustomTextFieldModifier(text: $carsListVM.model))
                             .disableAutocorrection(true)
+                            
                     } //: HStack 2
                     .padding(.leading, 15).padding(.trailing, 15)
                     
@@ -97,19 +99,34 @@ struct SearchView: View {
                     .padding(2)
                     
                     Spacer()
-                    
+                    Text("Be aware that the test backend system can only accept numbers and letters as input, and can't take spaces!").font(Font(UIFont.Body.size0))
+                    Spacer()
                     Button(action: {
                         self.showLoadingIndicator = true
-                        self.carsListVM.searchForCars()
+                        if (self.carsListVM.make.count > 0 && self.carsListVM.model.count > 0) {
+                            if (self.carsListVM.make.isAlphabeticOrNumericOrBoth && self.carsListVM.model.isAlphabeticOrNumericOrBoth) {
+                                self.carsListVM.searchForCars()
+                            } else {
+                                alertText = "Input Character Restrictions!"
+                                alertDescription = "\nThe simple backend for this test only takes letters and numbers and is unable to accept spaces"
+                                carsListVM.showAlert.toggle()
+                            }
+                            //self.carsListVM.searchForCars()
+                        } else {
+                            // Alert title "Please fill in all fields"
+                            alertText = "Unknown errror getting cars!"
+                            alertDescription = "\nPlease try again later or contact support."
+                            carsListVM.showAlert.toggle()
+                        }
                     }) {
-                        Text("Search")//.uppercased())
+                        Text("Search")
                             .modifier(ButtonModifier())
                     }
                     .frame(width: 200, height: 40, alignment: .center)
                     .alert(isPresented: $carsListVM.showAlert) {
                         Alert(
-                            title: Text("Error getting cars!"),
-                            message: Text("Please check search terms and try again."),
+                            title: Text(alertText),
+                            message: Text(alertDescription),
                             dismissButton: .default(Text("OK")))
                     }      .onChange(of: carsListVM.showAlert) { newValue in
                         if newValue {
