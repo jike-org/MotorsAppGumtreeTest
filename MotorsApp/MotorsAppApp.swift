@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct MotorsAppApp: App {
+    
+    @StateObject private var carsListViewModel = CarsViewModel()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(carsListViewModel)
         }
     }
 }

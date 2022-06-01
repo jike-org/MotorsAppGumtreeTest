@@ -11,16 +11,15 @@ import ActivityIndicatorView
 
 struct SearchView: View {
     
-    @StateObject private var carsListVM = CarsViewModel()
+    @EnvironmentObject private var carsListViewModel: CarsViewModel
     
     // Alert related objects
     @State var alertText: String = ""
     @State var alertDescription: String = ""
     
+    // Loading indicator show / hide
     @State var showLoadingIndicator = false
-    
-    @State var selection: Int = 0
-    
+        
     var body: some View {
         NavigationView {
             ZStack{
@@ -36,19 +35,19 @@ struct SearchView: View {
                         Menu {
                             
                             Button {
-                                carsListVM.make = "Ford"
+                                carsListViewModel.make = "Ford"
                             } label: {
                                 Text("Ford")
                                 Image("icnFord")
                             }
                             Button {
-                                carsListVM.make = "Nissan"
+                                carsListViewModel.make = "Nissan"
                             } label: {
                                 Text("Nissan")
                                 Image("icnNissan")
                             }
                             Button {
-                                carsListVM.make = "BMW"
+                                carsListViewModel.make = "BMW"
                             } label: {
                                 Text("BMW")
                                 Image("icnBMW")
@@ -56,41 +55,49 @@ struct SearchView: View {
                             
                         } label: {
                             Text("Select").modifier(BodyTextLinkModifier())
-                        }.frame(width: 60, height: 40, alignment: .leading)
-                        TextField("...or type here",
-                                  text: $carsListVM.make).textFieldStyle(.roundedBorder).frame(width: 200, height: 40, alignment: .trailing)
-                            .modifier(CustomTextFieldModifier(text: $carsListVM.make))
+                        }.frame(width: 50, height: 40, alignment: .leading)
+                        TextField("",
+                                  text: $carsListViewModel.make)
+                            .modifier(PlaceholderStyleModifier(showPlaceHolder: carsListViewModel.make.isEmpty, placeholder: "...or type here"))
+                            .frame(width: 200, height: 35, alignment: .trailing)
+                            .modifier(CustomTextFieldModifier(text: $carsListViewModel.make))
+                            .frame(width: 200, height: 40, alignment: .trailing)
                             .disableAutocorrection(true)
+                            
                     } //: HStack 1
-                    .padding(.leading, 15).padding(.trailing, 15)
+                    .padding(.leading, 10).padding(.trailing, 10)
                     
                     HStack{
                         Text("Model:").modifier(InLineTitleModifier())
                         Spacer()
-                        TextField("enter model",
-                                  text: $carsListVM.model).textFieldStyle(.roundedBorder).frame(width: 200, height: 40, alignment: .trailing)
-                            .modifier(CustomTextFieldModifier(text: $carsListVM.model))
+                        TextField("",
+                                  text: $carsListViewModel.model)
+                        .modifier(PlaceholderStyleModifier(showPlaceHolder: carsListViewModel.model.isEmpty, placeholder: "enter model"))
+                            .frame(width: 200, height: 35, alignment: .trailing)
+                            .modifier(CustomTextFieldModifier(text: $carsListViewModel.model))
+
+                            .frame(width: 200, height: 40, alignment: .trailing)
                             .disableAutocorrection(true)
                             
                     } //: HStack 2
-                    .padding(.leading, 15).padding(.trailing, 15)
+                    .padding(.leading, 10).padding(.trailing, 10)
                     
                     HStack {
                         Text("Year (tap to change):").modifier(InLineTitleModifier())
                         
-                        Picker(selection: $carsListVM.year) {
+                        Picker(selection: $carsListViewModel.year) {
                             ForEach(1950...2022, id: \.self) { value in
                                 Text(String(value))
                                     .tag(value)
                                     .font(.body)
                             }
                         } label: {
-                            Text(String(carsListVM.year))
+                            Text(String(carsListViewModel.year))
                                 .font(.body)
                         }
                         Spacer()
                     } //: HStack 3
-                    .padding(.leading, 15).padding(.trailing, 15)
+                    .padding(.leading, 10).padding(.trailing, 10)
                     
                     }
                     .padding()
@@ -99,52 +106,30 @@ struct SearchView: View {
                     .padding(2)
                     
                     Spacer()
-                    Text("Be aware that the test backend system can only accept numbers and letters as input, and can't take spaces!").font(Font(UIFont.Body.size0))
+                    Text("Please note that the test backend system can only accept numbers and letters as input, and can't take spaces!").font(Font(UIFont.Bold.size0))
                     Spacer()
-                    Button(action: {
-                        self.showLoadingIndicator = true
-                        if (self.carsListVM.make.count > 0 && self.carsListVM.model.count > 0) {
-                            if (self.carsListVM.make.isAlphabeticOrNumericOrBoth && self.carsListVM.model.isAlphabeticOrNumericOrBoth) {
-                                self.carsListVM.searchForCars()
-                            } else {
-                                alertText = "Input Character Restrictions!"
-                                alertDescription = "\nThe simple backend for this test only takes letters and numbers and is unable to accept spaces"
-                                carsListVM.showAlert.toggle()
-                            }
-                            //self.carsListVM.searchForCars()
-                        } else {
-                            // Alert title "Please fill in all fields"
-                            alertText = "Fill in all Fields!"
-                            alertDescription = "\nPlease fill in all fields in the form."
-                            carsListVM.showAlert.toggle()
-                        }
-                    }) {
+                    
+                    // Search Button
+                    Button(action: searchButtonPressed) {
                         Text("Search")
                             .modifier(ButtonModifier())
-                    }
+                    } //: Search Button
                     .frame(width: 200, height: 40, alignment: .center)
-                    .alert(isPresented: $carsListVM.showAlert) {
+                    .alert(isPresented: $carsListViewModel.showAlert) {
                         Alert(
                             title: Text(alertText),
                             message: Text(alertDescription),
                             dismissButton: .default(Text("OK")))
-                    }      .onChange(of: carsListVM.showAlert) { newValue in
+                    }      .onChange(of: carsListViewModel.showAlert) { newValue in
                         if newValue {
                             showLoadingIndicator.toggle()
                         }
                     }
-//                    .onChange(of: carsListVM.requestSucceded) { newValue in
-//                        if (newValue == false) {
-//                            alertText = "Network Error!"
-//                            alertDescription = "\nError fetching cars, please try again later or contact support if issue persists."
-//                            carsListVM.showAlert.toggle()
-//                        }
-//                    }
                     
                     // Using the technique of isActive on a navigation link
                     // for our segues (on device this is smooth)
-                    NavigationLink(isActive: $carsListVM.requestSucceded) {
-                        ResultsView(cars: $carsListVM.cars)
+                    NavigationLink(isActive: $carsListViewModel.requestSucceded) {
+                        ResultsView(cars: $carsListViewModel.cars)
                     } label: {
                         EmptyView()
                     }.onDisappear {
@@ -168,10 +153,32 @@ struct SearchView: View {
         }.navigationViewStyle(.stack)
         
     }
+    
+    
+    /// Function called when the user taps the search button
+    private func searchButtonPressed() {
+        self.showLoadingIndicator = true
+        if (self.carsListViewModel.make.count > 0 && self.carsListViewModel.model.count > 0) {
+            if (self.carsListViewModel.make.isAlphabeticOrNumericOrBoth && self.carsListViewModel.model.isAlphabeticOrNumericOrBoth) {
+                self.carsListViewModel.searchForCars()
+            } else {
+                alertText = "Input Character Restrictions!"
+                alertDescription = "\nThe simple backend for this test only takes letters and numbers and is unable to accept spaces"
+                carsListViewModel.showAlert.toggle()
+            }
+        } else {
+            // Alert title "Please fill in all fields"
+            alertText = "Fill in all Fields!"
+            alertDescription = "\nPlease fill in all fields in the form."
+            carsListViewModel.showAlert.toggle()
+        }
+    }
 }
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        SearchView().environmentObject(CarsViewModel()).previewDevice("iPhone 5")
+        
+        SearchView().environmentObject(CarsViewModel()).previewDevice("iPhone 13 Pro Max")
     }
 }

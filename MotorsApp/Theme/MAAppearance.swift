@@ -67,28 +67,28 @@ class MAAppearance {
         appearance.barTintColor = primaryTintColor
         appearance.backgroundColor = primaryTintColor
         
-        // Code extends bar color under top data / time area
-        if true {
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            appearance.titleTextAttributes =  [.foregroundColor: UIColor.white,
-                                               NSAttributedString.Key.font: BumpFontSizes ? UIFont.Bold.size7 : UIFont.Bold.size6]
-            appearance.backgroundColor = primaryTintColor
-            UINavigationBar.appearance().standardAppearance = appearance
-            UINavigationBar.appearance().scrollEdgeAppearance = appearance
-            
-            appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = UIColor.Theme.mainColor
-
-            let attrs: [NSAttributedString.Key: Any] = [
-                .foregroundColor: UIColor.white,
-                .font: UIFont.Bold.size4
-            ]
-
-            appearance.largeTitleTextAttributes = attrs
-
-            UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        }
+        // This code extends bar color under top data / time area
+        // for newer version of iOS and device form factors.
+        
+        let nonDotBarApperance = UINavigationBarAppearance()
+        nonDotBarApperance.configureWithOpaqueBackground()
+        nonDotBarApperance.titleTextAttributes =  [.foregroundColor: UIColor.white,
+                                                   NSAttributedString.Key.font: BumpFontSizes ? UIFont.Bold.size7 : UIFont.Bold.size6]
+        nonDotBarApperance.backgroundColor = primaryTintColor
+        appearance.standardAppearance = nonDotBarApperance
+        appearance.scrollEdgeAppearance = nonDotBarApperance
+        
+        nonDotBarApperance.configureWithOpaqueBackground()
+        nonDotBarApperance.backgroundColor = UIColor.Theme.mainColor
+        
+        let attrs: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.white,
+            .font: UIFont.Bold.size4
+        ]
+    
+        nonDotBarApperance.largeTitleTextAttributes = attrs
+        appearance.scrollEdgeAppearance = nonDotBarApperance
+ 
         
         // Attributes for page title
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white,

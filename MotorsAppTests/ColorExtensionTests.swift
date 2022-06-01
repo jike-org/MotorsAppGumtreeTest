@@ -12,12 +12,25 @@ import XCTest
 class ColorExtensionTests: XCTestCase {
 
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func test_ThemeColor_IsCorrectlyGenerated() throws {
+        // Given
+        let color = UIColor.Theme.mainColor
+        // When
+        let extractBackTheHexString = color.hexString
+        // Then
+        XCTAssertEqual(extractBackTheHexString, "#69B783")
     }
 
+    func test_OtherColors_AreCorrect() throws {
+        // Given
+        let color = UIColor.Font.Body.placeholder
+        
+        // When
+        let colorFromDescription = UIColor(white: 2/3, alpha: 1) // .lightGray is "A color object with a grayscale value of 2/3 and an alpha value of 1.0"
+        let extractTheHexString = color.hexString
+        
+        // Then
+        XCTAssertEqual(extractTheHexString, "#AAAAAA")
+        XCTAssertEqual(colorFromDescription, color)
+    }
 }

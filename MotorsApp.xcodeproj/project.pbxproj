@@ -42,6 +42,11 @@
 		869DF8CD28469F2000809EC1 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF8CC28469F2000809EC1 /* StringExtensionTests.swift */; };
 		869DF8CF2846A25B00809EC1 /* FontExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF8CE2846A25A00809EC1 /* FontExtensionTests.swift */; };
 		869DF8D12846A26C00809EC1 /* ColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF8D02846A26C00809EC1 /* ColorExtensionTests.swift */; };
+		869DF8D32846C45D00809EC1 /* ModelsForBrands.json in Resources */ = {isa = PBXBuildFile; fileRef = 869DF8D22846C45C00809EC1 /* ModelsForBrands.json */; };
+		869DF8D52846C66900809EC1 /* ModelsForBrands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869DF8D42846C66900809EC1 /* ModelsForBrands.swift */; };
+		86DA03802847350800B3F651 /* ScrollViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DA037F2847350800B3F651 /* ScrollViewModifier.swift */; };
+		86DA03822847571800B3F651 /* TrustSymbolImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DA03812847571800B3F651 /* TrustSymbolImageModifier.swift */; };
+		86DA0384284757E300B3F651 /* Image+MA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DA0383284757E300B3F651 /* Image+MA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +96,11 @@
 		869DF8CC28469F2000809EC1 /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		869DF8CE2846A25A00809EC1 /* FontExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensionTests.swift; sourceTree = "<group>"; };
 		869DF8D02846A26C00809EC1 /* ColorExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensionTests.swift; sourceTree = "<group>"; };
+		869DF8D22846C45C00809EC1 /* ModelsForBrands.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ModelsForBrands.json; sourceTree = "<group>"; };
+		869DF8D42846C66900809EC1 /* ModelsForBrands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsForBrands.swift; sourceTree = "<group>"; };
+		86DA037F2847350800B3F651 /* ScrollViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewModifier.swift; sourceTree = "<group>"; };
+		86DA03812847571800B3F651 /* TrustSymbolImageModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustSymbolImageModifier.swift; sourceTree = "<group>"; };
+		86DA0383284757E300B3F651 /* Image+MA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+MA.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +186,8 @@
 		869DF87B2842553400809EC1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				869DF8D22846C45C00809EC1 /* ModelsForBrands.json */,
+				869DF8D42846C66900809EC1 /* ModelsForBrands.swift */,
 				869DF87F2842576100809EC1 /* Cars.swift */,
 			);
 			path = Model;
@@ -237,6 +249,9 @@
 				869DF8A22843980500809EC1 /* TitleModifier.swift */,
 				869DF8B1284405C700809EC1 /* TextFieldClearModifier.swift */,
 				869DF8BB2844EAFE00809EC1 /* BodyTextModifier.swift */,
+				86DA037F2847350800B3F651 /* ScrollViewModifier.swift */,
+				86DA03812847571800B3F651 /* TrustSymbolImageModifier.swift */,
+				86DA0383284757E300B3F651 /* Image+MA.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -348,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869DF8D32846C45D00809EC1 /* ModelsForBrands.json in Resources */,
 				869DF8B92844E59400809EC1 /* CoverfaceSEBold.ttf in Resources */,
 				869DF8B72844E59400809EC1 /* CoverfaceSELight.ttf in Resources */,
 				869DF8B82844E59400809EC1 /* CoverfaceSE.ttf in Resources */,
@@ -374,14 +390,18 @@
 				869DF882284257FB00809EC1 /* CarsDataService.swift in Sources */,
 				869DF8912842B50800809EC1 /* ResultsView.swift in Sources */,
 				869DF8CB28469CAC00809EC1 /* String+MA.swift in Sources */,
+				86DA03822847571800B3F651 /* TrustSymbolImageModifier.swift in Sources */,
+				869DF8D52846C66900809EC1 /* ModelsForBrands.swift in Sources */,
 				869DF88F2842AF4800809EC1 /* UIColor+MA.swift in Sources */,
 				869DF8A72843980500809EC1 /* SymbolModifier.swift in Sources */,
 				869DF8BC2844EAFF00809EC1 /* BodyTextModifier.swift in Sources */,
 				869DF8AA2843995200809EC1 /* HeaderComponent.swift in Sources */,
 				869DF86D2842503700809EC1 /* ContentView.swift in Sources */,
+				86DA0384284757E300B3F651 /* Image+MA.swift in Sources */,
 				869DF8A0284397AD00809EC1 /* AboutView.swift in Sources */,
 				869DF88B284270F700809EC1 /* CarsViewModel.swift in Sources */,
 				869DF8A52843980500809EC1 /* TitleModifier.swift in Sources */,
+				86DA03802847350800B3F651 /* ScrollViewModifier.swift in Sources */,
 				869DF88928425BB700809EC1 /* MAAppearance.swift in Sources */,
 				869DF8A62843980500809EC1 /* ButtonModifier.swift in Sources */,
 				869DF86B2842503700809EC1 /* MotorsAppApp.swift in Sources */,
@@ -550,6 +570,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -580,6 +601,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (

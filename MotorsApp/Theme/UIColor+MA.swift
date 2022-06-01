@@ -24,7 +24,7 @@ extension UIColor {
     struct Font {
         struct Body {
             static var placeholder = UIColor.lightGray
-            static var textViewText = UIColor.darkGray
+            static var textViewText = UIColor.black //UIColor.Theme.mainColor
         }
     }
 }

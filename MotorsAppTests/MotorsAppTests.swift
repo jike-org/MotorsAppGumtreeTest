@@ -68,7 +68,6 @@ class MotorsAppTests: XCTestCase {
             observer = carsMockDataService.fetchCars(make: "Audi", model: "A1", year: "2016").sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
-                    print("Success")
                     expectation.fulfill()
                 case .failure(let error):
                     print(error)

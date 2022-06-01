@@ -1,0 +1,32 @@
+{
+    "carTypes": [
+        {
+        "brand": "Ford",
+        "models": [
+            "Fiesta",
+            "Focus",
+            "Puma",
+            "Kuga",
+            "Mondeo"
+        ],
+        "brand": "BMW",
+        "models": [
+            "3Series",
+            "1Series",
+            "X5",
+            "5Series",
+            "6Series"
+        ],
+        "brand": "Nissan",
+        "models": [
+            "Qashqai",
+            "SkylineGTR",
+            "Nissan350Z",
+            "Juke",
+            "Navara",
+            "Silvia",
+            "Leaf"
+        ]
+        }
+    ]
+}

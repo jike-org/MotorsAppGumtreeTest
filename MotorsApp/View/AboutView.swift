@@ -21,12 +21,8 @@ struct AboutView: View {
                   HeaderComponent()
                   Spacer(minLength: 10)
                   AppInfoView()
-                  
               }
-              .frame(minWidth: 0, maxWidth: .infinity)
-              .padding(.top, 15)
-              .padding(.bottom, 25)
-              .padding(.horizontal, 25)
+              .modifier(ScrollViewModifier())
           }.navigationBarTitle(Text("Info"))
           
       }.navigationViewStyle(.stack)

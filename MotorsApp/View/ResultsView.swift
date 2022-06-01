@@ -9,6 +9,10 @@ import SwiftUI
 
 struct ResultsView: View {
     @Binding var cars: Cars
+    
+    //@EnvironmentObject var carsListViewModel: CarsViewModel
+        
+    
    // @Environment(\.dismiss) private var dismiss
     let array = ["carA", "carB", "carC", "carD", "carE"]
     

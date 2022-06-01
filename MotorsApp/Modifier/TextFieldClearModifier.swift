@@ -13,7 +13,13 @@ struct CustomTextFieldModifier: ViewModifier {
     func body(content: Content) -> some View {
         ZStack {
             content
+                .background(Color(UIColor.TextField.borderlessBackground))
                 .font(Font(UIFont.Body.size1))
+                .padding(3)
+                .background(
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .stroke(Color(UIColor.TextField.borderColor), lineWidth: 2))
+                
             HStack {
                 if !text.isEmpty {
                     
@@ -28,6 +34,24 @@ struct CustomTextFieldModifier: ViewModifier {
                     
                 }
             }
+        }
+    }
+}
+
+public struct PlaceholderStyleModifier: ViewModifier {
+    var showPlaceHolder: Bool
+    var placeholder: String
+
+    public func body(content: Content) -> some View {
+        ZStack(alignment: .leading) {
+            if showPlaceHolder {
+                Text(placeholder)
+                    .foregroundColor(Color(UIColor.Font.Body.placeholder))
+                .padding(.horizontal, 5)
+            }
+            content
+                .foregroundColor(Color(UIColor.Font.Body.textViewText))
+            .padding(5.0)
         }
     }
 }

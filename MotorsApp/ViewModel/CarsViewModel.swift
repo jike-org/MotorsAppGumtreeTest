@@ -9,12 +9,9 @@ import Foundation
 import Combine
 
 class CarsViewModel: ObservableObject {
-    
-   // var subscription: Set<AnyCancellable> = []
-    
+        
     var cancellable: AnyCancellable?
     
-//    @Published private (set) var cars: Cars = Cars(searchResults: [])
     @Published var cars: Cars = Cars(searchResults: [])
 
     @Published var make: String = String()
@@ -27,6 +24,10 @@ class CarsViewModel: ObservableObject {
     @Published var showAlert: Bool = false
 //    @Published var alertText: String = ""
 //    @Published var alertDecription: String = ""
+    
+    public func setCars(cars: Cars) {
+        self.cars = cars
+    }
 
     public func searchForCars() {
         
